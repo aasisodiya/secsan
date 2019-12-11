@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Secret Santa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Play Secret Santa!">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="icon" href="http://icons.iconarchive.com/icons/flyinghearts/christmas/512/santa-icon.png"
+        type="image/gif" sizes="16x16">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <!-- <div id="gettarget">Target</div> -->
+    <div class="center">
+        <div class="holder" id="player" style="display: none;">
+            <input type="text" id="teamName" placeholder="Team Name">
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="text" id="email" placeholder="Email">
+            <input type="number" id="phonenumber" placeholder="Phone Number">
+            <input type="password" id="secret" placeholder="Password">
+            <br>
+            <button id="add" onclick="add()">Add</button>
+            <button id="gettarget" onclick="loadtarget()">Get My Target</button>
+            <hr>
+            <button id="play" onclick="play()" style="display: none;">Play</button>
+        </div>
+        <div class="holder" id="target" style="display: none;">
+            <input type="number" id="tphonenumber" placeholder="Phone Number">
+            <input type="password" id="tsecret" placeholder="Password">
+            <br>
+            <button id="findtarget" onclick="findtarget()">Get Target</button>
+        </div>
+        <div class="holder" id="cteam" style="display: none;">
+            <input type="text" id="createteam" placeholder="Team Name">
+            <br>
+            <button id="createURL" onclick="createURL()">Create URL for sharing!</button>
+        </div>
+        <div class="holder" id="instructions">
+            <ol style="text-align: left;">
+                <li>Take up Admin Role and create a Team</li>
+                <li>After creating a team, you will be given an URL to share. Share that URL with all players. Do not
+                    chnage the URL</li>
+                <li>All players will fill in the form in that URL and click on Add button to submit data</li>
+                <li>When everyone has registered, then admin will click on Play button</li>
+                <li>Then everyone can access the name of their target for <span style="color:red">Secret Santa</span>
+                </li>
+            </ol>
+            <button id="startgame" onclick="startGame()">Start the Game!</button>
+        </div>
+    </div>
+    <!-- Laughing Santa code taken from https://codemyui.com/laughing-santa-claus-in-pure-css/ -->
+    <div class="window">
+        <div class="santa">
+            <div class="head">
+                <div class="face">
+                    <div class="redhat">
+                        <div class="whitepart"></div>
+                        <div class="redpart"></div>
+                        <div class="hatball"></div>
+                    </div>
+                    <div class="eyes"></div>
+                    <div class="beard">
+                        <div class="nouse"></div>
+                        <div class="mouth"></div>
+                    </div>
+                </div>
+                <div class="ears"></div>
+            </div>
+            <div class="body"></div>
+        </div>
+    </div>
+    <div class="message">
+        <h1>Secret Santa!</h1>
+    </div>
+    <div id="result">
+        <div id="result-body"></div>
+        <br>
+        <div style="text-align: center;">
+            <div>Prefered Gift Amount</div>
+            <div id="prize">100</div>
+            <button id="close" onclick="closeIt()">Close</button>
+        </div>
+    </div>
+</body>
+
+</html>
