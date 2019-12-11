@@ -70,7 +70,7 @@ function add() {
         data: playerdata,
         success: function (data) {
             $('#player').empty();
-            $('#player').html(data + "<br> Now wait for Admin to initiate The Game! <br> <button onclick='loadtarget()'>Get My Target</button>");
+            $('#player').html(data + "<br> Now wait for Admin to initiate The Game!<hr> <br> Click below button when admin has initiated the game! <hr> <br> <button onclick='loadtarget()'>Get My Target</button>");
         },
         contentType: "application/json",
         dataType: 'json',
@@ -81,8 +81,6 @@ function add() {
     }).fail((data) => {
         console.log(data);
     });
-
-    $('#player').html("<br> Now wait for Admin to initiate The Game!<hr> <br> Click below button when admin has initiated the game! <hr> <br> <button onclick='loadtarget()'>Get My Target</button>");
 }
 
 function loadtarget() {
