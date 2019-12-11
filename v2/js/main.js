@@ -158,8 +158,8 @@ function play() {
         type: 'GET',
         url: 'https://tnf0erzp8b.execute-api.us-east-1.amazonaws.com/dev/shuffle?team=' + teamName,
         success: function (data) {
-            $('#target').empty();
-            $('#target').html(data);
+            $('#player').empty();
+            $('#player').html(data);
         },
         dataType: 'json',
         error: function (data) {
