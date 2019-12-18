@@ -89,6 +89,7 @@ function loadtarget() {
 }
 
 function findtarget() {
+    $('#loading').show();
     var tphonenumber, tsecret;
     tphonenumber = $('#tphonenumber').val().trim();
     tsecret = $('#tsecret').val().trim();
@@ -107,14 +108,17 @@ function findtarget() {
         success: function (data) {
             $('#target').empty();
             $('#target').html(data);
+            $('#loading').hide();
         },
         dataType: 'json',
         error: function (data) {
             console.log(data.responseText.replace(/"/g, ''));
             alert(data.responseText.replace(/"/g, ''));
+            $('#loading').hide();
         }
     }).fail((data) => {
         console.log(data);
+        $('#loading').hide();
     });
 }
 
@@ -169,4 +173,37 @@ function play() {
     }).fail((data) => {
         console.log(data);
     });
+}
+
+function hideAll() {
+    $('#instructions').hide();
+    $('#cteam').hide();
+    $('#target').hide();
+    $('#player').hide();
+    $('#menu').hide();
+}
+
+function showMenu() {
+    hideAll();
+    $('#menu').show();
+}
+
+function showPlayer() {
+    hideAll();
+    $('#player').show();
+}
+
+function showTarget() {
+    hideAll();
+    $('#target').show();
+}
+
+function showCTeam() {
+    hideAll();
+    $('#cteam').show();
+}
+
+function showInstructions() {
+    hideAll();
+    $('#instructions').show();
 }
