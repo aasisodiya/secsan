@@ -18,6 +18,21 @@
 <body>
     <!-- <div id="gettarget">Target</div> -->
     <div class="center">
+        <div class="fixedButton">
+            <button class="yellowButton" id="showMenu" onclick="showMenu()">Menu</button>
+        </div>
+        <div class="loading" id="loading" style="display: none;">
+            <h1>Loading....</h1>
+        </div>
+        <div class="holder" id="menu" style="display: none;">
+            <button class="yellowButton" id="showPlayer" onclick="showPlayer()">Add Player</button>
+            <hr>
+            <button class="yellowButton" id="showTarget" onclick="showTarget()">Get Target</button>
+            <hr>
+            <button class="yellowButton" id="showCTeam" onclick="showCTeam()">Create Team</button>
+            <hr>
+            <button class="yellowButton" id="showInstructions" onclick="showInstructions()">Instructions</button>
+        </div>
         <div class="holder" id="player" style="display: none;">
             <input type="text" id="teamName" placeholder="Team Name">
             <input type="text" id="name" placeholder="Your Name">
@@ -41,8 +56,8 @@
             <br>
             <button id="createURL" onclick="createURL()">Create URL for sharing!</button>
         </div>
-        <div class="holder" id="instructions">
-            <ol style="text-align: left; background: #ffffffb0; padding: 20px; font-weight: bold;">
+        <div class="holder" id="instructions" style="display: block;">
+            <ol style="text-align: left; padding: 20px; font-weight: bold;">
                 <li>Take up Admin Role and create a Team</li>
                 <li>After creating a team, you will be given an URL to share. Share that URL with all players. Do not
                     change the URL</li>
@@ -77,15 +92,6 @@
     </div>
     <div class="message">
         <h1>Secret Santa!</h1>
-    </div>
-    <div id="result">
-        <div id="result-body"></div>
-        <br>
-        <div style="text-align: center;">
-            <div>Prefered Gift Amount</div>
-            <div id="prize">100</div>
-            <button id="close" onclick="closeIt()">Close</button>
-        </div>
     </div>
 </body>
 
