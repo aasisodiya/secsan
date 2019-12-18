@@ -1,17 +1,18 @@
 body {
-    background: #F00000;
+    background: #de2f32;
     background: -webkit-linear-gradient(to right, #DC281E, #F00000);
     background: linear-gradient(to right, #DC281E, #F00000);
     margin: 0;
     font-family: "Mountains of Christmas";
+    font-weight: bold;
 }
 
 ::selection {
     background: rgba(255, 255, 0, 0.5);
 }
 
-body {
-    background: #de2f32;
+input {
+    font-family: inherit;
 }
 
 .window {
@@ -897,9 +898,9 @@ button, ::placeholder {
     box-shadow: 0px 0px 1px black;
 }
 
-.center button#start, button#gettarget {
+.center button#start, button#gettarget, .yellowButton {
     margin: 0;
-    background: yellow;
+    background: yellow !important;
     border: none;
     padding: 10px;
     width: 100px;
@@ -927,6 +928,8 @@ div .holder {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+    padding: 20px;
+    background: #ffffffb0;
 }
 
 #message, #message2 {
@@ -991,4 +994,20 @@ td {
 
 span {
     font-size: 20px;
+}
+
+.fixedButton {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+}
+
+.loading {
+    position: fixed;
+    right: 0;
+    left: 0;
+    text-align: center;
+    background: orangered;
+    height: 100vh;
+    z-index: 10;
 }
