@@ -62,6 +62,7 @@ function add() {
         $('#secret').attr('placeholder', "Please Enter Password");
         return;
     }
+    $('#loading').show();
     var playerdata = '{"teamName":"' + teamName + '","name": "' + name + '","email": "' + email + '","phonenumber": ' + phonenumber + ',"secret": "' + secret + '"}'
     console.log(playerdata);
     $.ajax({
@@ -71,16 +72,20 @@ function add() {
         success: function (data) {
             $('#player').empty();
             $('#player').html(data + "<br> Now wait for Admin to initiate The Game!<hr> <br> Click below button when admin has initiated the game! <hr> <br> <button onclick='loadtarget()'>Get My Target</button>");
+            $('#loading').hide();
         },
         contentType: "application/json",
         dataType: 'json',
         error: function (data) {
+            $('#loading').hide();
             console.log(data.responseText.replace(/"/g, ''));
             alert(data.responseText.replace(/"/g, ''));
         }
     }).fail((data) => {
         console.log(data);
+        $('#loading').hide();
     });
+    $('#loading').hide();
 }
 
 function loadtarget() {
@@ -133,7 +138,7 @@ function createURL() {
     var url = document.location.origin + document.location.pathname + "?teamName=" + teamName
     console.log(url);
     $('#cteam').empty();
-    $('#cteam').html("Share below URL with all the players <br> <hr> <input id='shareurl' style='color:blue; font-family: lucida console; margin:10px 0px;' value='" + url + "'> <br> <button onclick='myFunction()'>Copy</button>");
+    $('#cteam').html("Share below URL with all the players <br> <hr> <input id='shareurl' style='color:blue; font-family: lucida console; margin:10px 0px;' value='" + url + "' readonly='readonly'> <br> <button onclick='myFunction()'>Copy</button>");
 }
 
 function myFunction() {
