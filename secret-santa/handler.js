@@ -1,8 +1,5 @@
 "use strict";
 
-// Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-// SPDX-License-Identifier: Apache-2.0
-
 var aws = require("aws-sdk");
 var ses = new aws.SES();
 
@@ -10,7 +7,7 @@ exports.handler = async (event) => {
   console.log(event);
   var participants = event.body.participants;
   console.log("Total Number of Participants : " + participants.length);
-  var shuffle = [...participants]; // need a seperate copy
+  var shuffle = [...participants]; // need a separate copy
   while (!pairsAreUnique(participants, shuffle)) {
     shuffleit(shuffle);
   }
